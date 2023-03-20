@@ -1,1 +1,11 @@
- 
+ if (((form.getCurrentScore("DP_Pullthrough1")==1 &&
+form.getCurrentScore("pb_rec")==2||
+form.getCurrentScore("pb_rec")==3))||
+form.getCurrentScore("dp_agreement")==1)
+{
+form.setAnswerText("DP_reviewneeded",'1')
+} else
+if(form.getCurrentScore("pb_rec")==1)
+{
+form.setAnswerText("DP_reviewneeded",null);
+}
