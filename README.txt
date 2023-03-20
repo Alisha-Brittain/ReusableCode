@@ -1,7 +1,1 @@
-echo "# ReusableCode" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Alisha-Brittain/ReusableCode.git
-git push -u origin main
+This GitHub is for the use of Code Review for the Walsall Council Systems Team. Please do not upload information that is sensative or personal. This is for the use of JavaScript code review only.

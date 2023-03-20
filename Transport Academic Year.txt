@@ -1,0 +1,49 @@
+function dateFromString(date){
+                var          parts = date.split("/"),
+                                newDate = dates.today(),
+                                currentDate = dates.today();
+                                
+                newDate.setDayOfMonth(1);
+                newDate.setYear(Number(parts[2]));
+                newDate.setMonth(Number(parts[1]));
+                newDate.setDayOfMonth(Number(parts[0]));
+                return newDate;
+}
+                
+var schYr = "Not recorded"
+     ,schAge = "Not recorded"
+     ,currentYear = Number((dates.today() + "").substring(0,4))
+     ,chosenYear = Number((dates.today() + "").substring(0,4));
+
+if (Number((dates.today() + "").substring(5,7)) >= 9) {
+currentYear = currentYear + 1;
+} else {
+currentYear = currentYear;
+};
+
+if (form.getAnswerText('whichYear') == "nextYear") {
+chosenYear = currentYear + 1;
+} else {
+chosenYear = currentYear;
+};
+                
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 19)))) {schYr = "19+"; schAge = "19+"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 18)))) {schYr = "Year 13"; schAge = "17 - 18"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 17)))) {schYr = "Year 12"; schAge = "16 - 17"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 16)))) {schYr = "Year 11"; schAge = "15 - 16"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 15)))) {schYr = "Year 10"; schAge = "14 - 15"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 14)))) {schYr = "Year 9"; schAge = "13 - 14"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 13)))) {schYr = "Year 8"; schAge = "12 - 13"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 12)))) {schYr = "Year 7"; schAge = "11 - 12"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 11)))) {schYr = "Year 6"; schAge = "10 - 11"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 10)))) {schYr = "Year 5"; schAge = "9 - 10"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 9)))) {schYr = "Year 4"; schAge = "8 - 9"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 8)))) {schYr = "Year 3"; schAge = "7 - 8"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 7)))) {schYr = "Year 2"; schAge = "6 - 7"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 6)))) {schYr = "Year 1"; schAge = "5 - 6"} else
+if (form.getAnswerDate('children.dobB').earlierThan(dateFromString("1/9/" + (chosenYear - 5)))) {schYr = "Year R"; schAge = "4 - 5"} else 
+if (form.getAnswerText('children.dobB') != null && form.getAnswerText('children.dobB') != "") {schYr = "Pre-school"; schAge = "4 or under"}
+
+form.setAnswerText('schYr',schYr);
+form.setAnswerText('schAge',schAge);
+ 

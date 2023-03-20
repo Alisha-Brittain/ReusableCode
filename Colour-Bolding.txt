@@ -1,0 +1,22 @@
+Colour/Bolding (need hidden Rich Text Box as first element) 
+
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><FormattedText xmlns="http://corelogic.co.uk/mosaic/dto/form/jaxb/moform/view/common"> <ns7:Para xmlns:ns6="http://corelogic.co.uk/mosaic/dto/form/jaxb/moform" xmlns:ns5="http://corelogic.co.uk/mosaic/dto/form/jaxb/moform/view/print" xmlns:ns7="http://corelogic.co.uk/mosaic/dto/form/jaxb/moform/view/common" xmlns:ns2="http://corelogic.co.uk/mosaic/dto/form/jaxb/form" xmlns:ns4="http://corelogic.co.uk/mosaic/dto/form/jaxb/moform/view/screen" xmlns:ns3="http://corelogic.co.uk/mosaic/dto/form/jaxb/form/print">
+<b style="color:red">This is a paragraph.</b> </FormattedText>
+
+Other Possibilities
+
+<div style="border:1px dotted red;padding:2%;">I have a red dotted border.</div>
+
+<div style="background-color:red;color:white;padding:2%;">White text, red background.</div>
+
+•           <b> - Bold text
+•           <strong> - Important text
+•           <i> - Italic text
+•           <em> - Emphasized text
+•           <mark> - Marked/Highlight text
+•           <small> - Smaller text
+•           <del> - Deleted text
+•           <ins> - Inserted text
+•           <sub> - Subscript text
+•           <sup> - Superscript text

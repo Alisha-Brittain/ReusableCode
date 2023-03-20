@@ -1,0 +1,28 @@
+var errors =[],
+
+CtableDate = form.getAnswerCollection('TABLECOLLECTIONCODE').getCursor(),
+DateCount = 0;
+
+if (CtableDate.moveToFirst()) {
+do {
+DateCount = DateCount + 1;
+}
+while (CtableDate.moveToNext());
+} else 
+{
+DateCount = DateCount };
+
+if (DateCount == 0 &&
+
+form.getAnswerText("RADIOSETQUC")=='yes')
+{
+errors.push("Details of Example Table Required");
+} else
+if (DateCount > 0 
+ &&
+form.getAnswerText("RADIOSETQUC")!='yes') {
+errors.push("Details of Example Table to be removed");
+} else {}
+
+return errors;
+

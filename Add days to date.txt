@@ -1,0 +1,15 @@
+Add days to date
+
+if (form.getAnswerText("Datevis") != null &&
+    form.getAnswerText("Datevis") != "") {
+    if (form.getAnswerText("Expdate") == null ||
+        form.getAnswerText("Expdate") == "") {
+        form.setAnswerDate("Expdate",form.getAnswerDate("Datevis").withAddedDays(14));
+    } else {}
+} else {
+    if (form.getAnswerText("Datevis") == null ||
+        form.getAnswerText("Datevis") == "") {
+        form.setAnswerText("Expdate",null);
+    } else {}
+};
+

@@ -1,0 +1,78 @@
+Collapsing forms: 
+It could be based on 1 question or e.g. 2 questions (see Missing Child Return Interview)
+You cannot have any mandatory fields.
+If there are any mandatory fields you need to use a Validation Script
+
+var errors = [];
+
+if ((form.getCurrentScore('Q1') ==2 &&
+            form.getCurrentScore('Q2') ==3) &&
+            form.getAnswerText("FIELD")==null ||
+            form.getAnswerText("FIELD")=="")
+                {
+    errors.push("Answer Required");
+                }
+                else {}
+
+return errors;
+
+Then start SHOW/HIDE/CLEAR script – you will list all the fields/tables/radiosets/subsection 
+
+if(form.getCurrentScore("Q1")==1 &&
+form.getCurrentScore("Q2")==1)
+{
+form.showTextFieldQuestion("FIELD"); 
+form.showRadioset("FIELD");
+form.showSubsectionContaining("FIELD");
+}
+else
+{
+form.hideTextFieldQuestion("FIELD"); 
+form.hideRadioset("FIELD");
+form.hideSubsectionContaining("FIELD");
+form.setAnswerText("FIELD",null);
+form.setAnswerText("FIELD",null);
+form.setAnswerText("FIELD",null);
+}
+
+----------------
+
+
+Additional Notes: 
+To hide Paired Fieldset or Fieldset:
+-	Input hidden text Field e.g. “Field”, no printing 
+-	But in the script use ShowRadioset “Field”   /    HideRadioset “Field”
+To hide Find Party Subsection
+-	You need to put it in “Subsection” and add hidden text field (you will use Show/HideSubsectionContaining)
+To hide electronic signature
+-	You need to put in “Subsection” and add hidden text field
+To Hide Text 
+-	You need to put in “Subsection” and add hidden text field
+
+Sometimes Parts of the form are already using Show / Hide script for other questions.
+This may disturb the coding which may no longer works. 
+Those parts you will have to remove from the main SHOW/HIDE/CLEAR script and write that part of the script separately e.g. in Missing Return Interview – Additional Reasons tick list
+
+if(form.getCurrentScore("offerint")==1 &&
+form.getCurrentScore("int_accept")==1 &&
+form.getCurrentScore("additional")==1)
+{
+form.showSubsectionContaining("HIDE.CODE"); 
+form.showTextFieldQuestion("additional.details");
+}
+else
+{
+form.hideSubsectionContaining("HIDE.CODE"); 
+form.hideTextFieldQuestion("additional.details");
+form.setAnswerText("MR1",null);
+form.setAnswerText("MR2",null);
+form.setAnswerText("MR3",null);
+form.setAnswerText("MR4",null);
+form.setAnswerText("MR5",null);
+form.setAnswerText("MR6",null);
+form.setAnswerText("MR7",null);
+form.setAnswerText("MR10",null);
+form.setAnswerText("MR11",null);
+form.setAnswerText("MR8",null);
+form.setAnswerText("additional.details",null);
+}
